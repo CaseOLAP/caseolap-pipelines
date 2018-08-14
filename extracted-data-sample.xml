@@ -1,0 +1,147 @@
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">165</PMID>
+      <DateCompleted>
+        <Year>1976</Year>
+        <Month>02</Month>
+        <Day>13</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2017</Year>
+        <Month>11</Month>
+        <Day>28</Day>
+      </DateRevised>
+      <Article PubModel="Print">
+        <Journal>
+          <ISSN IssnType="Print">0009-8981</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>65</Volume>
+            <Issue>1</Issue>
+            <PubDate>
+              <Year>1975</Year>
+              <Month>Nov</Month>
+              <Day>15</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>Clinica chimica acta; international journal of clinical chemistry</Title>
+          <ISOAbbreviation>Clin. Chim. Acta</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>A clinical method for the determination of serum gamma-glutamyl transpeptidase.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>21-7</MedlinePgn>
+        </Pagination>
+        <Abstract>
+          <AbstractText>A simple, highly sensitive and reproducible method for the assay of gamma-glutamyl transpeptidase (EC 2.3.2-) activity is introduced, using gamma-glutamyl-p-nitroanilide as a substrate and glycylglycine as an acceptor in 50 g/l of polyoxyethylene nonylphenol. Serum transpeptidase activity was assayed in 1080 healthy adults, the normal mean value being 14.8 mU/ml. The diagnostic evaluation of the enzyme in various hepatobiliary diseases is also discussed.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Tamaoki</LastName>
+            <ForeName>H</ForeName>
+            <Initials>H</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Minato</LastName>
+            <ForeName>S</ForeName>
+            <Initials>S</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Takei</LastName>
+            <ForeName>S</ForeName>
+            <Initials>S</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Fujisawa</LastName>
+            <ForeName>K</ForeName>
+            <Initials>K</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>Netherlands</Country>
+        <MedlineTA>Clin Chim Acta</MedlineTA>
+        <NlmUniqueID>1302422</NlmUniqueID>
+        <ISSNLinking>0009-8981</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D003902">Detergents</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>EC 2.3.2.2</RegistryNumber>
+          <NameOfSubstance UI="D005723">gamma-Glutamyltransferase</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D001660" MajorTopicYN="N">Biliary Tract Diseases</DescriptorName>
+          <QualifierName UI="Q000175" MajorTopicYN="N">diagnosis</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003902" MajorTopicYN="N">Detergents</DescriptorName>
+          <QualifierName UI="Q000494" MajorTopicYN="N">pharmacology</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008107" MajorTopicYN="N">Liver Diseases</DescriptorName>
+          <QualifierName UI="Q000175" MajorTopicYN="N">diagnosis</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008832" MajorTopicYN="N">Microchemistry</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D013053" MajorTopicYN="N">Spectrophotometry</DescriptorName>
+          <QualifierName UI="Q000379" MajorTopicYN="N">methods</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005723" MajorTopicYN="N">gamma-Glutamyltransferase</DescriptorName>
+          <QualifierName UI="Q000097" MajorTopicYN="Y">blood</QualifierName>
+          <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>1975</Year>
+          <Month>11</Month>
+          <Day>15</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>1975</Year>
+          <Month>11</Month>
+          <Day>15</Day>
+          <Hour>0</Hour>
+          <Minute>1</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>1975</Year>
+          <Month>11</Month>
+          <Day>15</Day>
+          <Hour>0</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">165</ArticleId>
+        <ArticleId IdType="pii">0009-8981(75)90330-7</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
