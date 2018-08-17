@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>6. CaseOLAP</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>CaseOLAP</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11726,7 +11699,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11722,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,7 +11746,8 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11779,7 +11755,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11801,7 +11778,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11827,20 +11805,26 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Set-up-input-and-output-file-path">Set up input and output file path<a class="anchor-link" href="#Set-up-input-and-output-file-path">&#182;</a></h4>
+<h4 id="Data">Data<a class="anchor-link" href="#Data">&#182;</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../../13.Database/PMID2MeSH/medline/&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;input/cat2pmids.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">cvd2pmids</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total cat2pmids:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cat2pmids</span><span class="p">))</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;input/pmid2pcount.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pmid2pcount</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total pmid2pcount:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">pmid2pcount</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11848,95 +11832,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span> <span class="o">+</span> <span class="s1">&#39;allpmid2mesh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-     <span class="n">pmid2mesh</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">pmid2mesh</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>total: 125416
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../13.Database/PMID2Pcount/pmid2pcount.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-     <span class="n">pmid2pcount</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">pmid2pcount</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>total: 125417
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../cvd-mesh/CVD-MESH.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">MeSH</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="CaseOLAP-classs">CaseOLAP classs<a class="anchor-link" href="#CaseOLAP-classs">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -11952,16 +11849,12 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Caseolap</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
     
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">MeSH</span><span class="p">,</span><span class="n">pmid2mesh</span><span class="p">,</span><span class="n">pmid2pcount</span><span class="p">):</span>
+    
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cvd2pmids</span><span class="p">,</span><span class="n">pmid2pcount</span><span class="p">):</span>
         
-        <span class="bp">self</span><span class="o">.</span><span class="n">MeSH</span> <span class="o">=</span> <span class="n">MeSH</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cellnames</span> <span class="o">=</span> <span class="p">[]</span>
-        
-        <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">MeSH</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cellnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-        
-        
-        <span class="bp">self</span><span class="o">.</span><span class="n">pmid2mesh</span> <span class="o">=</span> <span class="n">pmid2mesh</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cvd2pmids</span> <span class="o">=</span> <span class="n">cvd2pmids</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pmid2pcount</span> <span class="o">=</span> <span class="n">pmid2pcount</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmids</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmid2pcount</span> <span class="o">=</span> <span class="p">{}</span>
@@ -11993,26 +11886,26 @@ div#notebook {
             <span class="k">return</span> <span class="n">df</span>  
         
         
+        
     <span class="k">def</span> <span class="nf">dump_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">fname</span><span class="p">):</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/&#39;</span><span class="o">+</span><span class="n">fname</span><span class="o">+</span><span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dl</span><span class="p">:</span>
                 <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dl</span><span class="p">)</span>
             
         
+        
     
-    <span class="k">def</span> <span class="nf">cell_pmids_collector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dump</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">MeSH</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">cell_pmids_collector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dump</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cvd2pmids</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
-                <span class="n">cell_mesh</span> <span class="o">=</span> <span class="n">value</span>
-                <span class="n">pmids</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmid2mesh</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                    <span class="n">pmid</span> <span class="o">=</span> <span class="n">key</span>
-                    <span class="n">pmid_meshes</span> <span class="o">=</span> <span class="n">value</span>
-                    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">pmid_meshes</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cell_mesh</span><span class="p">:</span>
-                            <span class="n">pmids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pmid</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmids</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">pmids</span><span class="p">})</span>
+                <span class="n">cell_pmids</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cellnames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmids</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">cell_pmids</span><span class="p">})</span>
+                
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total pmids collected for cell - &#39;</span><span class="p">,</span><span class="n">cell_name</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cell_pmids</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">dump</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dump_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_pmids</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;cellpmids&#39;</span><span class="p">)</span>
+            
                 
             
         
@@ -12028,7 +11921,8 @@ div#notebook {
                 <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmid2pcount</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">ipmid2pcount</span><span class="p">})</span>
                 
                 
-    <span class="k">def</span> <span class="nf">all_protein_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dump</span> <span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+                
+    <span class="k">def</span> <span class="nf">all_protein_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dump</span> <span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
             <span class="n">allproteins</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmid2pcount</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
@@ -12041,11 +11935,20 @@ div#notebook {
                         <span class="n">allproteins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
                         <span class="n">cellproteins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
                     <span class="n">uprotein</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">cellproteins</span><span class="p">))</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">cell_uniqp</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">uprotein</span><span class="p">})</span>       
-            <span class="bp">self</span><span class="o">.</span><span class="n">all_proteins</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">allproteins</span><span class="p">))</span>  
+                <span class="bp">self</span><span class="o">.</span><span class="n">cell_uniqp</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">uprotein</span><span class="p">})</span> 
+                
+                <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total proteins collected for cell - &#39;</span><span class="p">,</span><span class="n">cell_name</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">uprotein</span><span class="p">))</span>
+                    
+            <span class="bp">self</span><span class="o">.</span><span class="n">all_proteins</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">allproteins</span><span class="p">))</span>
+            
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total proteins collected: &#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">all_proteins</span><span class="p">))</span>
+            
             <span class="k">if</span> <span class="n">dump</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dump_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">all_proteins</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;allproteins&#39;</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">dump_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_uniqp</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;unique_proteins&#39;</span><span class="p">)</span>
+                
                 
                 
                 
@@ -12061,6 +11964,7 @@ div#notebook {
                             <span class="n">map_dict</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;protein&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;pmid&#39;</span><span class="p">:</span><span class="n">pmid</span><span class="p">})</span>
                 <span class="k">return</span> <span class="n">map_dict</span>
         
+                
                 
                 
     <span class="k">def</span> <span class="nf">cell_reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">Dict</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="n">operation</span><span class="p">):</span> 
@@ -12080,6 +11984,7 @@ div#notebook {
                 <span class="k">return</span> <span class="n">ucount</span>
         
                 
+            
     
     <span class="k">def</span> <span class="nf">cell_p2tf_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>      
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmid2pcount</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -12091,6 +11996,8 @@ div#notebook {
                 <span class="n">cellp2tf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_reduce</span><span class="p">(</span><span class="n">CellP2tf</span><span class="p">,[</span><span class="s1">&#39;protein&#39;</span><span class="p">,</span><span class="s1">&#39;tf&#39;</span><span class="p">],</span><span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;sum&#39;</span><span class="p">)</span>  
                 
                 <span class="bp">self</span><span class="o">.</span><span class="n">cell_p2tf</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">cellp2tf</span><span class="p">})</span>
+                
+                
                 
                 
     <span class="k">def</span> <span class="nf">cell_tf_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>       
@@ -12105,6 +12012,8 @@ div#notebook {
                             <span class="n">celltf</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">p</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
                             
                     <span class="bp">self</span><span class="o">.</span><span class="n">cell_tf</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">celltf</span><span class="p">})</span>
+                
+                
                 
                    
     <span class="k">def</span> <span class="nf">cell_pop_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dump</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -12127,6 +12036,8 @@ div#notebook {
                 <span class="bp">self</span><span class="o">.</span><span class="n">df_builder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_pop</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;pop&#39;</span><span class="p">)</span>
                 
                 
+                
+                
     <span class="k">def</span> <span class="nf">cell_p2pmid_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_pmid2pcount</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
@@ -12137,6 +12048,8 @@ div#notebook {
                 <span class="n">cellp2pmid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_reduce</span><span class="p">(</span><span class="n">CellP2pmid</span><span class="p">,[</span><span class="s1">&#39;protein&#39;</span><span class="p">,</span><span class="s1">&#39;pmid&#39;</span><span class="p">],</span><span class="n">operation</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span> 
                       
                 <span class="bp">self</span><span class="o">.</span><span class="n">cell_p2pmid</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">cellp2pmid</span><span class="p">})</span>   
+                
+                
                 
                 
     <span class="k">def</span> <span class="nf">cell_ntf_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -12164,6 +12077,7 @@ div#notebook {
                 
                 
                 
+                
     <span class="k">def</span> <span class="nf">cell_ndf_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_p2pmid</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
@@ -12188,6 +12102,8 @@ div#notebook {
                 <span class="bp">self</span><span class="o">.</span><span class="n">cell_ndf</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">cellndf</span><span class="p">})</span>
                 
                 
+                
+                
     <span class="k">def</span> <span class="nf">cell_rel_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_ntf</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
@@ -12197,6 +12113,8 @@ div#notebook {
                     <span class="n">rel</span> <span class="o">=</span> <span class="n">cellntf</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_ndf</span><span class="p">[</span><span class="n">cell_name</span><span class="p">][</span><span class="n">p</span><span class="p">]</span>
                     <span class="n">cellrel</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">p</span><span class="p">:</span><span class="n">rel</span><span class="p">})</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">cell_rel</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">cell_name</span><span class="p">:</span><span class="n">cellrel</span><span class="p">})</span>
+                
+                
                 
             
     <span class="k">def</span> <span class="nf">cell_dist_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dump</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> 
@@ -12233,6 +12151,8 @@ div#notebook {
                 <span class="bp">self</span><span class="o">.</span><span class="n">df_builder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_dist</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;dist&#39;</span><span class="p">)</span>
             
             
+            
+            
     <span class="k">def</span> <span class="nf">cell_cseolap_finder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dump</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_dist</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">cell_name</span> <span class="o">=</span> <span class="n">key</span>
@@ -12244,13 +12164,9 @@ div#notebook {
                 
             <span class="k">if</span> <span class="n">dump</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">df_builder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_caseolap</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;caseolap&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">dump_json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell_caseolap</span><span class="p">,</span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;caseolap&#39;</span><span class="p">)</span>
     
-                
-            
-            
-           
-            
-           
+                      
 </pre></div>
 
 </div>
@@ -12258,7 +12174,8 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12271,12 +12188,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">Caseolap</span><span class="p">(</span><span class="n">MeSH</span><span class="p">,</span><span class="n">pmid2mesh</span><span class="p">,</span><span class="n">pmid2pcount</span><span class="p">)</span>
-<span class="n">C</span><span class="o">.</span><span class="n">cell_pmids_collector</span><span class="p">(</span><span class="n">dump</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">Caseolap</span><span class="p">(</span><span class="n">cvd2pmids</span><span class="p">,</span><span class="n">pmid2pcount</span><span class="p">)</span>
+<span class="n">C</span><span class="o">.</span><span class="n">cell_pmids_collector</span><span class="p">(</span><span class="n">dump</span> <span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1">#C.cell_pmids</span>
 <span class="n">C</span><span class="o">.</span><span class="n">cell_pmid2pcount_collector</span><span class="p">()</span>
 <span class="c1">#C.cell_pmid2pcount</span>
-<span class="n">C</span><span class="o">.</span><span class="n">all_protein_finder</span><span class="p">(</span><span class="n">dump</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">C</span><span class="o">.</span><span class="n">all_protein_finder</span><span class="p">(</span><span class="n">dump</span> <span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="c1">#C.all_proteins</span>
 <span class="n">C</span><span class="o">.</span><span class="n">all_protein_finder</span><span class="p">()</span>
 <span class="c1">#C.all_proteins</span>
@@ -12309,8 +12226,4 @@ div#notebook {
     </div>
   </div>
 </body>
-
- 
-
-
 </html>

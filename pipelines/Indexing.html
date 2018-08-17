@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>2. Parsing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Indexing</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11726,7 +11699,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11722,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,29 +11746,31 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Parsingn-Pipeline">Parsingn Pipeline<a class="anchor-link" href="#Parsingn-Pipeline">&#182;</a></h1><p>This pipeline will parse the extracted data and convert it into data structures compatible with the CaseOLAP pipeline.</p>
+<h1 id="Indexing-and-Search">Indexing and Search<a class="anchor-link" href="#Indexing-and-Search">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Indexing and search</strong> : This step prepares an indexed database which facilitates the entity search and counting operation . First, initialize the ElasticSearch index object. Then the index is populated in batches with bulk indexing functionality available in Elasticsearch package.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Installation of required python package</strong> : Install and import <code>lxml, itertools</code> and <code>json</code>  libraries into the current python environment.</p>
+<p><strong>Installation of required python package</strong> : Install and import  elasticsearch and elasticsearch_dsl library to the current python environment.</p>
 
 </div>
 </div>
@@ -11803,14 +11780,13 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">traceback</span>
-<span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">etree</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="k">import</span> <span class="n">Elasticsearch</span>
+<span class="kn">from</span> <span class="nn">elasticsearch_dsl</span> <span class="k">import</span> <span class="n">Search</span><span class="p">,</span> <span class="n">Q</span>
 </pre></div>
 
 </div>
@@ -11818,32 +11794,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Set-up-output-data-dir">Set up output data dir<a class="anchor-link" href="#Set-up-output-data-dir">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>MeSH statistics dictionary</p>
+<p><strong>Index initialization</strong> : Index initialization is done with the index information which includes index name, type name, number of shards, number of replicas.</p>
 
 </div>
 </div>
@@ -11853,7 +11809,52 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mesh_statistics</span> <span class="o">=</span> <span class="p">{}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">INDEX_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed&quot;</span>
+<span class="n">TYPE_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed_meta&quot;</span>
+<span class="n">NUMBER_SHARDS</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># keep this as one if no clusterNUMBER_REPLICAS = 0 </span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    following is the defined schema</span>
+<span class="sd">    totally 5 fields: </span>
+<span class="sd">    pmid, date, author list, journal name, mesh heading list</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">request_body</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;number_of_shards&quot;</span><span class="p">:</span> <span class="n">NUMBER_SHARDS</span><span class="p">,</span>
+            <span class="s2">&quot;number_of_replicas&quot;</span><span class="p">:</span> <span class="n">NUMBER_REPLICAS</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;mappings&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="n">TYPE_NAME</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;pmid&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;keyword&quot;</span>
+                    <span class="p">},</span>
+                    <span class="c1"># &quot;date&quot;: {</span>
+                    <span class="c1">#     &quot;type&quot;: &quot;long&quot;</span>
+                    <span class="c1"># },</span>
+                    <span class="c1"># &quot;author_list&quot;: {</span>
+                    <span class="c1">#     &quot;type&quot;: &quot;keyword&quot;</span>
+                    <span class="c1"># },</span>
+                    <span class="c1"># &quot;journal_name&quot;: {</span>
+                    <span class="c1">#     &quot;type&quot;: &quot;keyword&quot;</span>
+                    <span class="c1"># },</span>
+                    <span class="s2">&quot;mesh_heading&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;similarity&quot;</span><span class="p">:</span> <span class="s2">&quot;BM25&quot;</span>
+                    <span class="p">},</span>
+                    <span class="s2">&quot;abstract&quot;</span><span class="p">:{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">es</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">INDEX_NAME</span><span class="p">):</span>
+     <span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">INDEX_NAME</span><span class="p">)</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deleting index </span><span class="si">%s</span><span class="s2"> , Response: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">INDEX_NAME</span><span class="p">,</span> <span class="n">res</span><span class="p">))</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">INDEX_NAME</span><span class="p">,</span> <span class="n">body</span> <span class="o">=</span> <span class="n">request_body</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Create index </span><span class="si">%s</span><span class="s2"> , Response: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">INDEX_NAME</span><span class="p">,</span> <span class="n">res</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11861,15 +11862,16 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Data parsing strategy </strong> :  The extracted data is an <code>XML</code> file, and text data is embedded in the tree structure of <code>XML</code> document. The following are steps for parsing data:</p>
+<p><strong>Bulk indexing</strong> : 
+In the first step of bulk indexing, data bulk is created with two components.</p>
 <ul>
-<li>Implement  the etree functionality  in <code>lxml</code> module to dig into the tree structure of <code>XML</code> document. </li>
-<li>The separate components e.g. <code>PMID, authors, abstract</code>, <code>MeSH</code> etc. of the data is obtained by using tags representing these components. </li>
-<li>Implement the chain functionality in itertools  to creates an iterator that returns elements from the iterables which was  obtained by implementing  etree functionality in <code>lxml</code>.</li>
+<li>First component is a dictionary with metadata information of index name, type name and bluck id  which is  ‘pmid’  key.  </li>
+<li>Prepare the  second component which  is  data dictionary with all information of ‘title’,’abstract’,’MeSH’ etc.</li>
 </ul>
 
 </div>
@@ -11880,158 +11882,128 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Search the tag in the xml element</span>
-<span class="c1"># Return tag&#39;s text if tag exists, return empty string if doesn&#39;t</span>
-<span class="k">def</span> <span class="nf">get_text</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">e</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">e</span><span class="o">.</span><span class="n">text</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inputFilePath</span> <span class="o">=</span> <span class="s2">&quot;./pubmed.json&quot;</span>
+<span class="n">logFilePath</span> <span class="o">=</span> <span class="s2">&quot;./index_pubmed_log_20171001.txt&quot;</span>
 
-<span class="c1"># &lt;!ELEMENT	AuthorList (Author+) &gt;</span>
-<span class="c1"># &lt;!ELEMENT	Author (((LastName, ForeName?, Initials?, Suffix?) | CollectiveName), Identifier*, AffiliationInfo*) &gt;</span>
-<span class="k">def</span> <span class="nf">parse_author</span><span class="p">(</span><span class="n">authors</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">authors</span><span class="p">:</span>
-        <span class="n">item</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">item</span><span class="p">[</span><span class="s1">&#39;LastName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s1">&#39;LastName&#39;</span><span class="p">)</span>
-        <span class="n">item</span><span class="p">[</span><span class="s1">&#39;ForeName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s1">&#39;ForeName&#39;</span><span class="p">)</span>
-        <span class="n">item</span><span class="p">[</span><span class="s1">&#39;Initials&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s1">&#39;Initials&#39;</span><span class="p">)</span>
-        <span class="n">item</span><span class="p">[</span><span class="s1">&#39;Suffix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s1">&#39;Suffix&#39;</span><span class="p">)</span>
-        <span class="n">item</span><span class="p">[</span><span class="s1">&#39;CollectiveName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="s1">&#39;CollectiveName&#39;</span><span class="p">)</span>
-        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Creation of dictionary of parsed data </strong>: A python dictionary  is created with all the components as key-value pair. This JSON-like data structure makes it compatible for  indexing and searching  in Elasticsearch which is described in step 3 of protocol.</p>
-<p><strong>Creation of MeSH to PMID mapping</strong>: During the creation of dictionary of parsed data, MeSH to PMID mapping table can also be created. This mapping is used to create Text-cube(in step 4) document structure as an requirement of CaseOLAP algorithm.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse_pubmed_file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">pubmed_output_file</span><span class="p">,</span> <span class="n">pmid2mesh_output_file</span><span class="p">):</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start parsing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">file</span><span class="p">)</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;PubmedArticle&#39;</span><span class="p">),</span> <span class="n">tree</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;BookDocument&#39;</span><span class="p">))</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="n">noabs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">meshFilePath</span> <span class="o">=</span> <span class="s2">&quot;./mesh2pmid/mesh2pmid&quot;</span>
     
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+<span class="n">INDEX_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed&quot;</span>
+<span class="n">TYPE_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed_meta&quot;</span>
 
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">pmid2mesh</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">()</span>
 
-        <span class="c1"># PMID - Exactly One Occurrance</span>
-        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;PMID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="s1">&#39;.//PMID&#39;</span><span class="p">)</span>
-        <span class="n">pmid2mesh</span><span class="p">[</span><span class="s1">&#39;PMID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="s1">&#39;.//PMID&#39;</span><span class="p">)</span>
+<span class="n">mesh2pmid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">ic</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ir</span> <span class="o">=</span> <span class="mi">0</span>
 
-        <span class="c1"># # Article title - Zero or One Occurrences</span>
-        <span class="c1"># result[&#39;ArticleTitle&#39;] = get_text(article, &#39;.//ArticleTitle&#39;)</span>
+ <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">inputFilePath</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">logFilePath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">bulk_size</span> <span class="o">=</span> <span class="mi">5000</span> <span class="c1"># number of document processed in each bulk index</span>
+        <span class="n">bulk_data</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># data in bulk index</span>
 
-        <span class="c1"># Abstract - Zero or One Occurrences</span>
-        <span class="n">abstractList</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;.//Abstract&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">abstractList</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span> <span class="c1">## each line is single document</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">abstract</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">line</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">abstractList</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;AbstractText&#39;</span><span class="p">)])</span>
-                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Abstract&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">abstract</span>
+                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">paperInfo</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                
+                <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+                
+                <span class="c1"># update PMID</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paperInfo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PMID&quot;</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">)</span>
+                
+        
+                
+
+                <span class="c1">#update MeSH Heading &lt;----------------------</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;mesh_heading&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paperInfo</span><span class="p">[</span><span class="s2">&quot;MeshHeadingList&quot;</span><span class="p">])</span>
+                
+                
+                
+
+                <span class="c1"># update Abstract&lt;------------------</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;abstract&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paperInfo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Abstract&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+                
+                
+                
+                <span class="c1"># collect Mesh2PMID &lt;-------------------</span>
+                <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">mesh</span> <span class="ow">in</span> <span class="n">paperInfo</span><span class="p">[</span><span class="s2">&quot;MeshHeadingList&quot;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">mesh</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mesh2pmid</span><span class="p">:</span>
+                               <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">])</span>
+                        
+                        
+                        
+                
+                <span class="c1">## Put current data into the bulk &lt;---------</span>
+                <span class="n">op_dict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;_index&quot;</span><span class="p">:</span> <span class="n">INDEX_NAME</span><span class="p">,</span>
+                        <span class="s2">&quot;_type&quot;</span><span class="p">:</span> <span class="n">TYPE_NAME</span><span class="p">,</span>
+                        <span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="n">bulk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">op_dict</span><span class="p">)</span>
+                <span class="n">bulk_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span> 
+                
+                
+                
+                        
+                <span class="c1">## Start Bulk indexing</span>
+                <span class="k">if</span> <span class="n">cnt</span> <span class="o">%</span> <span class="n">bulk_size</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">cnt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">ic</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">tmp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+                    <span class="n">es</span><span class="o">.</span><span class="n">bulk</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">INDEX_NAME</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">bulk_data</span><span class="p">,</span> <span class="n">request_timeout</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
+                    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;bulk indexing... </span><span class="si">%s</span><span class="s2">, escaped time </span><span class="si">%s</span><span class="s2"> (seconds) </span><span class="se">\n</span><span class="s2">&quot;</span> \
+                               <span class="o">%</span> <span class="p">(</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">start</span> <span class="p">)</span> <span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="n">ic</span><span class="o">%</span><span class="k">100</span> ==0:
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; i bulk indexing... </span><span class="si">%s</span><span class="s2">, escaped time </span><span class="si">%s</span><span class="s2"> (seconds) &quot;</span> \
+                              <span class="o">%</span> <span class="p">(</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">start</span> <span class="p">)</span> <span class="p">)</span>
+                    
+                    
+                    <span class="n">bulk_data</span> <span class="o">=</span> <span class="p">[]</span>
+                    
+                    
+
             <span class="k">except</span><span class="p">:</span>
-                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Abstract&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-                <span class="n">noabs</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Abstract&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-            <span class="n">noabs</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">cnt</span> <span class="o">-=</span> <span class="mi">1</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XXXX Unexpected Error happened at line: XXXX&quot;</span><span class="p">)</span>
+                <span class="c1">#print(line)</span>
+                
+                
+        
+        <span class="c1">## indexing those left papers</span>
+        <span class="k">if</span> <span class="n">bulk_data</span><span class="p">:</span>
+            <span class="n">ir</span> <span class="o">+=</span><span class="mi">1</span>
+            <span class="n">tmp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">es</span><span class="o">.</span><span class="n">bulk</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">INDEX_NAME</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">bulk_data</span><span class="p">,</span> <span class="n">request_timeout</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;bulk indexing... </span><span class="si">%s</span><span class="s2">, escaped time </span><span class="si">%s</span><span class="s2"> (seconds) </span><span class="se">\n</span><span class="s2">&quot;</span>\
+                       <span class="o">%</span> <span class="p">(</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">start</span> <span class="p">)</span> <span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">ir</span><span class="o">%</span><span class="k">100</span> ==0:
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; r bulk indexing... </span><span class="si">%s</span><span class="s2">, escaped time </span><span class="si">%s</span><span class="s2"> (seconds) &quot;</span>\
+                      <span class="o">%</span> <span class="p">(</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">start</span> <span class="p">)</span> <span class="p">)</span>
+            <span class="n">bulk_data</span> <span class="o">=</span> <span class="p">[]</span>
             
             
 
-            
-            
-        <span class="c1"># # Author List - Zero or More Occurrences</span>
-        <span class="c1"># authors = article.findall(&#39;.//Author&#39;)</span>
-        <span class="c1"># result[&#39;AuthorList&#39;] = parse_author(authors)</span>
-        
-        <span class="c1"># # Journal - Exactly One Occurrance</span>
-        <span class="c1"># journal = article.find(&#39;.//Journal&#39;)</span>
-        <span class="c1"># result[&#39;Journal&#39;] = get_text(journal, &#39;Title&#39;)</span>
-        
-        
-        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;PubDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;PubDate&#39;</span><span class="p">][</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">journal</span><span class="p">,</span> <span class="s1">&#39;JournalIssue/PubDate/Year&#39;</span><span class="p">)</span>
-        
-        <span class="c1"># result[&#39;PubDate&#39;][&#39;Month&#39;] = get_text(journal, &#39;JournalIssue/PubDate/Month&#39;)</span>
-        <span class="c1"># result[&#39;PubDate&#39;][&#39;Day&#39;] = get_text(journal, &#39;JournalIssue/PubDate/Day&#39;)</span>
-        <span class="c1"># result[&#39;PubDate&#39;][&#39;Season&#39;] = get_text(journal, &#39;JournalIssue/PubDate/Season&#39;)</span>
-        <span class="c1"># result[&#39;PubDate&#39;][&#39;MedlineDate&#39;] = get_text(journal, &#39;JournalIssue/PubDate/MedlineDate&#39;)</span>
-        
-        
-        
-        
+        <span class="c1"># Dumping rest papers</span>
+        <span class="n">fm</span> <span class="o">=</span> <span class="n">meshFilePath</span> <span class="o">+</span> <span class="s1">&#39;_from_indexing.json&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fm</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fou1</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mesh2pmid</span><span class="p">,</span> <span class="n">fou1</span><span class="p">)</span>
+        <span class="n">mesh2pmid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         
 
-        <span class="c1"># MeshHeading - Zero or More Occurrences</span>
-        <span class="n">headings</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//MeshHeading&#39;</span><span class="p">)</span>
-        
-        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">pmid2mesh</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="n">headings</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">heading</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
-                <span class="n">descriptor_names</span> <span class="o">=</span> <span class="n">heading</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;DescriptorName&#39;</span><span class="p">)</span>
-                <span class="n">qualifier_names</span> <span class="o">=</span> <span class="n">heading</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;QualifierName&#39;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">descriptor_names</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">descriptor_name</span> <span class="ow">in</span> <span class="n">descriptor_names</span><span class="p">:</span>
-                        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">descriptor_name</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                        <span class="n">pmid2mesh</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">descriptor_name</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">qualifier_names</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">qualifier_name</span> <span class="ow">in</span> <span class="n">qualifier_names</span><span class="p">:</span>
-                        <span class="n">result</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qualifier_name</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                        <span class="n">pmid2mesh</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qualifier_name</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-                        
-                        
-        
-        
-        <span class="n">mesh_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;MeshHeadingList&#39;</span><span class="p">])</span>
-        
-        <span class="k">if</span> <span class="n">mesh_count</span> <span class="ow">in</span> <span class="n">mesh_statistics</span><span class="p">:</span>
-            <span class="n">mesh_statistics</span><span class="p">[</span><span class="n">mesh_count</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">mesh_statistics</span><span class="p">[</span><span class="n">mesh_count</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-        <span class="c1"># Dump to pubmed json file &lt;----------------------------</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">pubmed_output_file</span><span class="p">)</span>
-        <span class="n">pubmed_output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        
-        <span class="c1"># Dump to pmid2mesh json file &lt;-------------------------</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">pmid2mesh</span><span class="p">,</span> <span class="n">pmid2mesh_output_file</span><span class="p">)</span>
-        <span class="n">pmid2mesh_output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finish parsing </span><span class="si">%s</span><span class="s1">, totally </span><span class="si">%d</span><span class="s1"> articles parsed. Total time: </span><span class="si">%f</span><span class="s1">s&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> acticles no abstracts&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">noabs</span><span class="p">))</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Finish PubMed meta-data indexing. Total escaped time </span><span class="si">%s</span><span class="s2"> (seconds) </span><span class="se">\n</span><span class="s2">&quot;</span>\
+                   <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finish PubMed meta-data indexing. Total escaped time </span><span class="si">%s</span><span class="s2"> (seconds) &quot;</span>\
+              <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="p">)</span>
+           
 </pre></div>
 
 </div>
@@ -12039,104 +12011,22 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Setting up directories in parsing loop</strong></p>
+<p><strong>Search functionality</strong> : One can perform search operation over data index created by Elasticsearch application. Once a search operation is initiated for user defined entity, it gathers information of that entity as a ranked list. Following are the steps for search operation:</p>
+<ul>
+<li>start the Elasticsearch server</li>
+<li>implement Elasticsearch DSL search functionality with index name, parameters and query</li>
+<li>iterate over all hits obtained in search result to find desired entity</li>
+</ul>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>    
-    
-<span class="k">def</span> <span class="nf">parse_dir</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">pubmed_output_file</span><span class="p">,</span><span class="n">pmid2mesh_output_file</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">source_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">source_dir</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^pubmed18n\d\d\d\d.xml$&#39;</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">parse_pubmed_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">pubmed_output_file</span><span class="p">,</span> <span class="n">pmid2mesh_output_file</span><span class="p">)</span>
-                <span class="k">except</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XXXX Unexpected error happended when parsing </span><span class="si">%s</span><span class="s2"> XXXX&quot;</span> <span class="o">%</span> <span class="n">file</span><span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">print_exc</span><span class="p">())</span>
-                    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-                    
-                    
-                    
-                    
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Run the Parsing Pipeline</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-
-    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-
-    <span class="n">pubmed_output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s1">&#39;data/pubmed.json&#39;</span><span class="p">)</span>
-    <span class="n">pmid2mesh_output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s1">&#39;pmid2mesh/pmid2mesh_from_parsing.json&#39;</span><span class="p">)</span>
-    
-    
-    
-    <span class="n">pubmed_output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pubmed_output_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    <span class="n">pmid2mesh_output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">pmid2mesh_output_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    
-    
-    
-    <span class="n">parse_dir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s1">&#39;ftp.ncbi.nlm.nih.gov/pubmed/baseline&#39;</span><span class="p">),</span>\
-              <span class="n">pubmed_output_file</span><span class="p">,</span> <span class="n">pmid2mesh_output_file</span><span class="p">)</span>
-    <span class="n">parse_dir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s1">&#39;ftp.ncbi.nlm.nih.gov/pubmed/updatefiles&#39;</span><span class="p">),</span>\
-              <span class="n">pubmed_output_file</span><span class="p">,</span> <span class="n">pmid2mesh_output_file</span><span class="p">)</span>
-    
-    
-    
-    <span class="n">pubmed_output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">pmid2mesh_output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="n">mesh_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="s1">&#39;data/mesh_statistics.json&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mesh_statistics</span><span class="p">,</span> <span class="n">mesh_file</span><span class="p">)</span>
-    <span class="n">mesh_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==== Parsing finished, results dumped to </span><span class="si">%s</span><span class="s2"> ====&quot;</span> <span class="o">%</span> <span class="n">output_file_path</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;==== TOTAL TIME: </span><span class="si">%f</span><span class="s2">s ====&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span>
-    
-    
-    
-    
-    
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
