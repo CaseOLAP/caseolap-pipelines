@@ -1,0 +1,49 @@
+18277353 insulin|3 citrate_synthase,_mitochondrial|1
+18167155 interleukin-17d|4
+22951368 insulin-like_growth_factor_i|6 insulin|2 insulin-like_growth_factor-binding_protein_3|3 heat_shock_protein_beta-3|1
+8213101 c-reactive_protein|1
+17560504 filamin-a|1
+10694331 von_willebrand_factor|2 intercellular_adhesion_molecule_1|3 e-selectin|2
+1310560 parathyroid_hormone|2
+10770117 prothrombin|1 von_willebrand_factor|2 thrombomodulin|1 alpha-1-antitrypsin|1 plasminogen|4 alpha-2-macroglobulin|1 antithrombin-iii|2
+12410038 keratin,_type_i_cytoskeletal_20|3
+10887500 prolactin|1
+23544303 tumor_necrosis_factor_ligand_superfamily_member_13|1
+2444621 citrate_synthase,_mitochondrial|1
+21760585 c-reactive_protein|1
+19917389 prothrombin|1
+17599974 membrane_cofactor_protein|1
+7692848 insulin-like_growth_factor_i|6 insulin-like_growth_factor-binding_protein_1|1 insulin-like_growth_factor-binding_protein_3|1 insulin-like_growth_factor_ii|3 insulin-like_growth_factor-binding_protein_4|2 insulin-like_growth_factor-binding_protein_2|5
+26099233 tumor_necrosis_factor_ligand_superfamily_member_13|5
+9166025 tumor_necrosis_factor_ligand_superfamily_member_13|1
+26806393 calcitonin|2
+18767272 tumor_necrosis_factor_ligand_superfamily_member_13|1
+2585231 tumor_necrosis_factor|1
+21382096 fibroblast_growth_factor_2|12
+1960559 neprilysin|1
+19160334 insulin|6
+19250325 interferon_gamma|4 interleukin-4|1
+21480214 stabilin-1|9
+22595965 alcohol_dehydrogenase|1
+15486066 tumor_necrosis_factor_ligand_superfamily_member_13|1
+26239617 somatotropin|1
+18500998 tumor_necrosis_factor_ligand_superfamily_member_13|1
+19444928 tumor_necrosis_factor|2
+24812167 cystatin-c|2
+28069966 interleukin-1_receptor-associated_kinase_1|4 methyl-cpg-binding_protein_2|3 interleukin-1_receptor-associated_kinase_4|3
+2451717 alpha-fetoprotein|1
+28834892 tumor_necrosis_factor_ligand_superfamily_member_13|1
+15167120 tumor_necrosis_factor_ligand_superfamily_member_13|1
+15297856 nadh-cytochrome_b5_reductase_3|1
+23028951 n(g),n(g)-dimethylarginine_dimethylaminohydrolase_1|2 cofilin-1|1 synaptosomal-associated_protein_25|1 annexin_a3|1 rho_gdp-dissociation_inhibitor_1|1
+9001324 plasminogen|1
+3233105 dopamine_beta-hydroxylase|1
+7687409 insulin-like_growth_factor_i|8 insulin|18 insulin-like_growth_factor-binding_protein_1|5 insulin-like_growth_factor_ii|2
+15107509 complement_c3|3 adenosine_deaminase|1
+24446655 c-type_natriuretic_peptide|1
+9683599 neutrophil_gelatinase-associated_lipocalin|1 neurogenic_locus_notch_homolog_protein_1|1
+3035524 alpha-1-antitrypsin|1 alpha-1-antichymotrypsin|1
+7031835 angiotensinogen|1 renin|5
+22645426 cd40_ligand|1
+9849795 somatotropin|1
+956351 serum_albumin|1
