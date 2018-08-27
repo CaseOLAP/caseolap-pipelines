@@ -11885,7 +11885,6 @@ In the first step of bulk indexing, data bulk is created with two components.</p
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">inputFilePath</span> <span class="o">=</span> <span class="s2">&quot;./pubmed.json&quot;</span>
 <span class="n">logFilePath</span> <span class="o">=</span> <span class="s2">&quot;./index_pubmed_log_20171001.txt&quot;</span>
 
-<span class="n">meshFilePath</span> <span class="o">=</span> <span class="s2">&quot;./mesh2pmid/mesh2pmid&quot;</span>
     
 <span class="n">INDEX_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed&quot;</span>
 <span class="n">TYPE_NAME</span> <span class="o">=</span> <span class="s2">&quot;pubmed_meta&quot;</span>
@@ -11924,17 +11923,6 @@ In the first step of bulk indexing, data bulk is created with two components.</p
                 <span class="c1"># update Abstract&lt;------------------</span>
                 <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;abstract&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paperInfo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Abstract&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 
-                
-                
-                
-                <span class="c1"># collect Mesh2PMID &lt;-------------------</span>
-                <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">mesh</span> <span class="ow">in</span> <span class="n">paperInfo</span><span class="p">[</span><span class="s2">&quot;MeshHeadingList&quot;</span><span class="p">]:</span>
-                        <span class="k">if</span> <span class="n">mesh</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mesh2pmid</span><span class="p">:</span>
-                               <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-                        <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">])</span>
-                        
-                        
                         
                 
                 <span class="c1">## Put current data into the bulk &lt;---------</span>
@@ -11989,13 +11977,6 @@ In the first step of bulk indexing, data bulk is created with two components.</p
                       <span class="o">%</span> <span class="p">(</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">start</span> <span class="p">)</span> <span class="p">)</span>
             <span class="n">bulk_data</span> <span class="o">=</span> <span class="p">[]</span>
             
-            
-
-        <span class="c1"># Dumping rest papers</span>
-        <span class="n">fm</span> <span class="o">=</span> <span class="n">meshFilePath</span> <span class="o">+</span> <span class="s1">&#39;_from_indexing.json&#39;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fm</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fou1</span><span class="p">:</span>
-            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mesh2pmid</span><span class="p">,</span> <span class="n">fou1</span><span class="p">)</span>
-        <span class="n">mesh2pmid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         
 
         <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>

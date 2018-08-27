@@ -12102,6 +12102,86 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MeSH-to-PMID-Mapping">MeSH to PMID Mapping<a class="anchor-link" href="#MeSH-to-PMID-Mapping">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">inputFilePath</span> <span class="o">=</span> <span class="s2">&quot;data/pubmed.json&quot;</span>
+<span class="n">meshFilePath</span> <span class="o">=</span> <span class="s2">&quot;mesh2pmid/&quot;</span>
+    
+<span class="n">mesh2pmid_output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">meshFilePath</span> <span class="o">+</span> <span class="s1">&#39;mesh2pmid.json&#39;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> 
+<span class="n">mesh2pmid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">inputFilePath</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
+        
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+            
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fin</span><span class="p">:</span> <span class="c1">## each line is single document</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+                <span class="n">paperInfo</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                
+                <span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+                
+                <span class="c1"># update PMID</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paperInfo</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;PMID&quot;</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">)</span>
+                
+                <span class="c1">#update MeSH Heading &lt;----------------------</span>
+                <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;mesh_heading&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paperInfo</span><span class="p">[</span><span class="s2">&quot;MeshHeadingList&quot;</span><span class="p">])</span>
+                
+                <span class="c1"># collect Mesh2PMID &lt;-------------------</span>
+                <span class="k">if</span> <span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">mesh</span> <span class="ow">in</span> <span class="n">paperInfo</span><span class="p">[</span><span class="s2">&quot;MeshHeadingList&quot;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">mesh</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mesh2pmid</span><span class="p">:</span>
+                               <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                        <span class="n">mesh2pmid</span><span class="p">[</span><span class="n">mesh</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;pmid&quot;</span><span class="p">])</span>
+                        
+                        
+                          
+                <span class="k">if</span> <span class="n">k</span><span class="o">%</span><span class="k">500000</span> == 0:
+                    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;done!&#39;</span><span class="p">)</span>
+                    <span class="c1">#break</span>
+                    
+            <span class="k">except</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XXXX Unexpected Error happened at line: XXXX&quot;</span><span class="p">)</span>
+               
+                
+          
+        
+        
+        
+        <span class="c1"># Dumping rest papers</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">mesh2pmid</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="n">key</span><span class="p">:</span><span class="n">value</span><span class="p">},</span> <span class="n">mesh2pmid_output_file</span><span class="p">)</span>
+            <span class="n">mesh2pmid_output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+            
+        <span class="n">mesh2pmid</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        
+        
+        
+
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finish Total escaped time </span><span class="si">%s</span><span class="s2"> (seconds) &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="p">)</span>
+        
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
