@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+### CaseOLAP Workflow
 
-You can use the [editor on GitHub](https://github.com/CaseOLAP/caseolap-pipelines/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The Context-aware Semantic Online Analytical Processing pipeline (CaseOLAP), was developed in 2016 by Fangbo Tao et.al. CaseOLAP successfully quantifies user-defined phrase-category relationships through analysis of textual data.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+CaseOLAP workflow presents data preprocessing (i.e., downloading and parsing text documents), indexing and searching with Elasticsearch, creating a functional document structure called Text-Cube and quantifying phrase-category relationships using the core CaseOLAP algorithm.
 
-### Markdown
+Data preprocessing generates key-value pairs for all documents involved. As an example, a key may refer to the document PMID, while a value may refer to different document metadata. Preprocessed data is rearranged by indexing and searching for an entity count, which further facilitates the CaseOLAP score calculation. Obtained raw CaseOLAP results can be taken to integrative analysis including dimensionality reduction, clustering, temporal and geographical analysis, as well as the creation of a graphical database which enables semantic mapping of the documents .
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CaseOLAP/caseolap-pipelines/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Pipelines
+Downloading and Data Extraction
+Data Parsing Pipeline
+Indexing and Search with Elasticsearch
+Text-Cube Creation
+Entity Count
+CaseOLAP Calculation
+Data Samples
+Extracted Data Sample
+Parsed Data Sample
+Age group CaseOLAP score Sample
+PMID to entity count mapping Sample
