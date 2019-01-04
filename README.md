@@ -9,12 +9,12 @@ Data preprocessing generates key-value pairs for all documents involved. As an e
 <h2>Pipelines</h2>
 
 <ul>
-                    <li> <a href="pipelines/Download.html" target="_blank"> Downloading and Data Extraction </a> </li>
-                    <li> <a href="pipelines/Parsing.html" target="_blank"> Data Parsing Pipeline </a> </li>
-                    <li> <a href="pipelines/Indexing.html" target="_blank"> Indexing and Search with Elasticsearch</a></li>
-                    <li> <a href="pipelines/TextCube.html" target="_blank"> Text-Cube Creation </a></li>
-                    <li> <a href="pipelines/EntityCount.html" target="_blank"> Entity Count </a></li>
-                    <li> <a href="pipelines/CaseOLAP.html" target="_blank"> CaseOLAP Calculation </a> </li>
+                    <li> <a href="notebooks/Download.ipynb" target="_blank"> Downloading and Data Extraction </a> </li>
+                    <li> <a href="notebooks/Parsing.ipynb" target="_blank"> Data Parsing Pipeline </a> </li>
+                    <li> <a href="notebooks/Indexing.ipynb" target="_blank"> Indexing and Search with Elasticsearch</a></li>
+                    <li> <a href="notebooks/TextCube.ipynb" target="_blank"> Text-Cube Creation </a></li>
+                    <li> <a href="notebooks/EntityCount.ipynb" target="_blank"> Entity Count </a></li>
+                    <li> <a href="notebooks/CaseOLAP.ipynb" target="_blank"> CaseOLAP Calculation </a> </li>
                 </ul>
                 <h2>Data Samples</h2>
                 <ul>
